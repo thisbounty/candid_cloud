@@ -1,5 +1,0 @@
-cmake_minimum_required(VERSION 2.8)
-project( prepareImage )
-find_package( OpenCV REQUIRED )
-add_executable( prepareImage prepareImage.cpp )
-target_link_libraries( prepareImage ${OpenCV_LIBS} )
