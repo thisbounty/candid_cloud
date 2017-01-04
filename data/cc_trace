@@ -1,0 +1,7 @@
+convert /input/$1 -resize 5760x5760 /input/$1
+convert /input/$1 /input/$1.bmp
+convert /input/$1 /input/$1.png
+mkbitmap /input/$1.bmp
+potrace /input/$1.bmp --fillcolor=#ffffff -k $3
+convert /input/$1.eps  -background "#FFFFFF" -flatten /input/$2.out.png
+./data/maskwc -M 7 -d 1 -m /input/$2.out.png -c /input/$1.png -o /output/$2.mask /data/words.txt 
